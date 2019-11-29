@@ -20,6 +20,9 @@ import { UserComponent } from './user/user.component';
 import { CreateTicketComponent } from './create-ticket/create-ticket.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
+import { OperatorComponent } from './operator/operator.component';
+import { SocketService } from './services/socket.service';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
     UserComponent,
     CreateTicketComponent,
     CreateUserComponent,
-    BottomSheetComponent
+    BottomSheetComponent,
+    OperatorComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +59,7 @@ import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
     MatRadioModule,
   ],
   entryComponents: [ErrorComponent, BottomSheetComponent],
-  providers: [MatNativeDateModule, MatDatepickerModule],
+  providers: [MatNativeDateModule, MatDatepickerModule, SocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

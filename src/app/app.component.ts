@@ -13,7 +13,7 @@ export class AppComponent {
   title = 'ticket System';
   loggedIn = false;
   constructor(private router: Router, public userService: UserService, private cdr: ChangeDetectorRef, private _bottomSheet: MatBottomSheet) {
-
+    console.log('userService.user ',UserService.user);
   }
 
 
