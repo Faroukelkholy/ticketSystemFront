@@ -1,0 +1,26 @@
+
+<mat-grid-list cols="1" rowHeight="1:1">
+  <form     class="container"
+  [formGroup]="myLoginForm" class="login-form" (ngSubmit)="submitLogin()">
+    <mat-form-field class="login-full-width">
+      <input matInput placeholder="Email" type="email" formControlName="email">
+      <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+      <mat-error *ngIf="
+      !!(
+        myLoginForm?.controls.email.touched &&
+        myLoginForm?.controls.email.dirty &&
+        myLoginForm?.controls.email.invalid
+      )
+    ">
+        Please enter a valid email address
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="login-full-width">
+      <input matInput placeholder="Password" type="password" formControlName="password">
+    </mat-form-field>
+    <button color="primary" mat-raised-button  type="submit"  [disabled]="!myLoginForm.valid">Login</button>
+  </form>
+</mat-grid-list>
+
+
