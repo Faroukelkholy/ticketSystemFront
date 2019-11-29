@@ -1,6 +1,8 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from './services/user.service';
+import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
+import { MatBottomSheet } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +10,9 @@ import { UserService } from './services/user.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ticketSystemFront';
+  title = 'ticket System';
   loggedIn = false;
-  constructor(private router: Router, public userService: UserService, private cdr: ChangeDetectorRef) {
+  constructor(private router: Router, public userService: UserService, private cdr: ChangeDetectorRef, private _bottomSheet: MatBottomSheet) {
 
   }
 
@@ -23,6 +25,9 @@ export class AppComponent {
     }
   }
 
+  openBottomSheet(): void {
+    this._bottomSheet.open(BottomSheetComponent);
+  }
 
   logOut() {
     UserService.access_token = null;

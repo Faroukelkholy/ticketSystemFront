@@ -19,6 +19,7 @@ import { TicketComponent } from './ticket/ticket.component';
 import { UserComponent } from './user/user.component';
 import { CreateTicketComponent } from './create-ticket/create-ticket.component';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CreateUserComponent } from './create-user/create-user.component';
     TicketComponent,
     UserComponent,
     CreateTicketComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    BottomSheetComponent
   ],
   imports: [
     BrowserModule,
@@ -51,8 +53,8 @@ import { CreateUserComponent } from './create-user/create-user.component';
     MatNativeDateModule,
     MatRadioModule,
   ],
-  entryComponents: [ErrorComponent],
-  providers: [MatNativeDateModule,MatDatepickerModule],
+  entryComponents: [ErrorComponent, BottomSheetComponent],
+  providers: [MatNativeDateModule, MatDatepickerModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -22,9 +22,9 @@ export class TicketService {
     );
   }
 
-  saveTicket(post, user, access_token){
+  saveTicket(ticket, user, access_token){
     let body = {
-      post: post,
+      ticket: ticket,
       author:user
     };
     let headers = new HttpHeaders().set('Authorization', `Bearer ${access_token}`).set('Content-type', 'application/json');
