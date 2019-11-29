@@ -10,6 +10,9 @@ export class BackendURL {
     public static host: string = 'http://localhost:3000';
     public static auth: string = BackendURL.host + '/auth';
     public static users: string = BackendURL.host + '/users';
+    public static tickets: string = BackendURL.host + '/tickets';
+    public static statistics: string = BackendURL.host + '/statistics';
+
 
 
 

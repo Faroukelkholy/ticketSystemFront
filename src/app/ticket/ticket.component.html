@@ -1,0 +1,15 @@
+<ng-container *ngFor="let ticket of tickets">
+  <mat-card class="ticket-card">
+      <mat-card-header>
+        <!-- <div mat-card-avatar class="ticket-header-image"></div> -->
+        <mat-card-title text-capitalize>{{ticket.author.name | titlecase }}</mat-card-title>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content class="ticket-content">
+          <mat-card-title>{{ticket.title}}</mat-card-title>
+        <p>
+          {{ticket.description}}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>

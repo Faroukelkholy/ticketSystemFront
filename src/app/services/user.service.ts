@@ -21,12 +21,12 @@ export class UserService {
   constructor(private http: HttpClient) {
   }
 
-  getAccess_token() {
+  queryAccess_token() {
     UserService.access_token = localStorage.getItem('access_token');
     return UserService.access_token;
   }
 
-  getUser() {
+  queryUser() {
     UserService.user = localStorage.getItem('user');
     return UserService.user;
   }
