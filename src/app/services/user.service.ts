@@ -41,7 +41,7 @@ export class UserService {
   saveUser(user) {
     let body = {
       user: user,
-      hr: UserService.user
+      admin: UserService.user
     };
     let headers = new HttpHeaders().set('Authorization', `Bearer ${UserService.access_token}`).set('Content-type', 'application/json');
     return this.http.post(BackendURL.users, body, { headers: headers }).pipe(

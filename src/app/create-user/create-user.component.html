@@ -1,0 +1,93 @@
+<mat-grid-list cols="1" rowHeight="1:1">
+    <form
+      class="container"
+      [formGroup]="userform"
+      class="user-form"
+      (ngSubmit)="submitUser()"
+    >
+      <mat-form-field class="user-full-width">
+        <input
+          matInput
+          placeholder="FirstName"
+          type="text"
+          formControlName="firstname"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="user-full-width">
+        <input
+          matInput
+          placeholder="LastName"
+          type="text"
+          formControlName="lastname"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="user-full-width">
+        <input
+          matInput
+          placeholder="Email"
+          type="email"
+          formControlName="email"
+        />
+        <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+        <mat-error
+          *ngIf="
+            !!(
+              userform?.controls.email.touched &&
+              userform?.controls.email.dirty &&
+              userform?.controls.email.invalid
+            )
+          "
+        >
+          Please enter a valid email address
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="user-full-width">
+        <input
+          matInput
+          placeholder="Mobile"
+          type="number"
+          formControlName="mobile"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="user-full-width">
+        <input matInput placeholder="Title" type="text" formControlName="type" />
+      </mat-form-field>
+
+
+      <mat-form-field class="user-full-width">
+        <input
+          matInput
+          placeholder="Address"
+          type="text"
+          formControlName="address"
+        />
+      </mat-form-field>
+
+      <div class="user-full-width">
+        <mat-label style="margin-right: 5px;">Gender</mat-label>
+        <mat-radio-group formControlName="gender">
+          <mat-radio-button value="male" style="margin-right: 5px;">Male</mat-radio-button>
+          <mat-radio-button value="female">Female</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <mat-form-field class="user-full-width">
+        <input
+          matInput
+          [matDatepicker]="picker"
+          placeholder="Choose a date"
+          formControlName="dob"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <button color="primary" mat-raised-button type="submit" [disabled]="!userform.valid">
+        Save User
+      </button>
+    </form>
+  </mat-grid-list>

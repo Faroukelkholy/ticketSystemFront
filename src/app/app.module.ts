@@ -18,6 +18,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { TicketComponent } from './ticket/ticket.component';
 import { UserComponent } from './user/user.component';
 import { CreateTicketComponent } from './create-ticket/create-ticket.component';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CreateTicketComponent } from './create-ticket/create-ticket.component';
     ErrorComponent,
     TicketComponent,
     UserComponent,
-    CreateTicketComponent
+    CreateTicketComponent,
+    CreateUserComponent
   ],
   imports: [
     BrowserModule,
