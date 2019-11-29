@@ -22,5 +22,16 @@ export class TicketService {
     );
   }
 
+  saveTicket(post, user, access_token){
+    let body = {
+      post: post,
+      author:user
+    };
+    let headers = new HttpHeaders().set('Authorization', `Bearer ${access_token}`).set('Content-type', 'application/json');
+    return this.http.post(BackendURL.tickets, body, { headers: headers }).pipe(
+      catchError(handleError)
+    );
+  }
+
 
 }

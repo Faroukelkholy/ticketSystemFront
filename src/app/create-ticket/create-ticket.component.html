@@ -1,0 +1,12 @@
+<form
+class="container"
+[formGroup]="ticketForm" class="ticket-form" (ngSubmit)="submitTicket()">
+  <mat-form-field class="ticket-full-width">
+    <input matInput placeholder="Title" type="text" formControlName="title">
+  </mat-form-field>
+
+  <mat-form-field class="ticket-full-width">
+    <textarea matInput placeholder="Description" type="text" formControlName="description"></textarea>
+  </mat-form-field>
+  <button color="primary" mat-raised-button  type="submit" [disabled]="!ticketForm.valid">Create Ticket</button>
+</form>
