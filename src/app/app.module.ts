@@ -16,6 +16,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatRadioModule} from '@angular/material/radio';
 import { MatNativeDateModule } from '@angular/material/core';
 import { TicketComponent } from './ticket/ticket.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { TicketComponent } from './ticket/ticket.component';
     LoginComponent,
     HomeComponent,
     ErrorComponent,
-    TicketComponent
+    TicketComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
